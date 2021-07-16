@@ -1,5 +1,8 @@
+const toyToFind = 6
+
 const toys = [
 {
+    id: 1,
     name: "Bop It",
     maker: "Hasbro",
     price: 29.99,
@@ -9,6 +12,7 @@ const toys = [
 },
 
  {
+    id: 2,
     name: "Slingshot",
     maker: "Mr Slingshot",
     price: 25.99,
@@ -18,6 +22,7 @@ const toys = [
 },
 
 {
+    id: 3,
     name: "Mecha Nixon Action Figure",
     maker: "Mom's Friendly Robot Company",
     price: 54.99,
@@ -28,7 +33,9 @@ const toys = [
 ]
 
 const lawnDarts = {
-    name: "Lawn Darts",
+    
+    id: 5,
+    name: "Lawn Dart Battle Set",
     maker: "ACME",
     price: 34.99,
     cost: 23,
@@ -38,6 +45,7 @@ const lawnDarts = {
 toys.push(lawnDarts)
 
 const flameThrower = {
+        id: 6,
         name: "Fun Time Flamethrower",
         maker: "Ikea",
         price: 99.99,
@@ -49,6 +57,10 @@ const flameThrower = {
     toys.push(flameThrower)
 
 for (const toy of toys) {
-        console.log(toy.name);
+    if (toy.id === toyToFind) {
+        toy.price = toy.price * 1.05
+        console.log(`The ${toy.name} is made by ${toy.maker} and costs $${toy.price}  
+`);
     }
+}
 
