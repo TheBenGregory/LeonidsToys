@@ -39,7 +39,7 @@ const lawnDarts = {
     ageGroup: "All Ages",
     inventory: 6
 }
-// toys.push(lawnDarts)
+
 
 const flameThrower = {
         
