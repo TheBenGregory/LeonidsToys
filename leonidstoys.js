@@ -67,10 +67,19 @@ const flameThrower = {
         price: 14.99,
         cost: 5,
         ageGroup: "10+",
-        inventory: 47
+        inventory: 47,
     }
 
+
+
+
    
+    const today = new Date()
+    const date = `${today.getMonth() +1}/${today.getDay()}/${today.getFullYear()}`
+    
+    for (const toy of toys) (
+        toy.dateAdded = date
+    )
 
 const addToyToInventory = (toyObject) => {
     const lastIndex = toys.length -1
@@ -78,6 +87,7 @@ const addToyToInventory = (toyObject) => {
     const maxId = currentLastToy.id
     const idForNewToy = maxId + 1
     toyObject.id = idForNewToy
+    idForNewToy.dateAdded = Date
     toys.push(toyObject)
 }
 
@@ -90,7 +100,8 @@ addToyToInventory(lawnDarts)
 
 for (const toy of toys) {
     // if (toy.id === toyToFind) {
-    //     toy.price = toy.price * 1.05
-        console.log(`The ${toy.name} is made by ${toy.maker} and costs $${toy.price} and its ID is ${toy.id} 
-`);
+        //     toy.price = toy.price * 1.05
+        console.log(`The ${toy.name} is made by ${toy.maker} and costs $${toy.price} and its ID is ${toy.id} and it was added on ${toy.dateAdded}
+        `);
     }
+    
